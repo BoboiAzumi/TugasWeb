@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Mahasiswa</title>
+    <style>
+        @keyframes summon{
+            from{width: 0%}
+            to{width:50%}
+        }
+
+        html, body{
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f5f5f9;
+        }
+
+        .container{
+            display: flex;
+        }
+
+        .sidebar{
+            display: block;
+            width: 12rem;
+        }
+
+        .sidebarline{
+            position: fixed;
+            background-color: white;
+            width: 10rem;
+            height: 100%;
+        }
+        .btn:hover {
+            background: #e7e7ff;
+            color: #8c8eff;
+        }
+
+        .btn{
+            background:#FFFFFF;
+            color: #9fa9b2;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            margin-top: 0.2rem;
+            padding: 0.9rem;
+            border-radius: 0.5rem;
+        }
+
+        .btn.active{
+            background: #e7e7ff;
+            color: #8c8eff;
+        }
+
+        .logo{
+            color: #4d5f71;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content{
+            background-color: white;
+            margin-top: 0.4rem;
+            width: 68rem;
+            border-radius: 1rem;
+            padding-top: 1rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
+            padding-bottom: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .header{
+            color: #8c8eff;
+        }
+
+        .tablex{
+            width: 100%;
+        }
+
+        .tablex th:first-child{
+            border-radius: 1rem 0 0 0;
+        }
+        .tablex th:last-child{
+            border-radius: 0 1rem 0 0;
+        }
+
+        .tablex th{
+            height: 3rem;
+            font-size: 1.2rem;
+        }
+
+        .tablex th{
+            background-color: #e7e7ff;
+        }
+
+        .tablex, th, tr, td{
+            border-collapse: collapse;
+        }
+
+        .tablex tr{
+            background-color:#e7e7ff;
+        }
+
+        .tablex tr:hover{
+            background-color:#e7e7ff;
+        }
+
+        .tablex tr:nth-child(even){
+            background-color: white;
+        }
+
+        .tablex td{
+            text-align: center
+        }
+
+        .tablex td:nth-child(even){
+            text-align: left;
+        }
+
+        .tablex tr td{
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .hidden_element{
+            background: rgba(255, 255, 255, 0.33);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            border: 1px solid rgba(255, 255, 255, 0.37);
+
+            position: fixed;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+
+            display:flex;
+            justify-content: center;
+        }
+
+        .aboutcontainer{
+            box-shadow: 10px 10px 5px rgba(255, 255, 255, 0.33);
+            background-color: rgb(250, 250, 250);
+            border: 1px solid rgb(250, 250, 250);
+            border-radius: 12px;
+            margin-top: 9rem;
+            margin-bottom: 9rem;
+            width: 50%;
+            animation: summon;
+            animation-duration: 1.5s;
+
+            overflow: hidden;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+        .contenthidden{
+            margin: 2rem;
+        }
+
+        .aboutcontainer .flxbutton{
+            margin-top: 5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btnhidden{
+            width: 6rem;
+            height: 3rem;
+            background: #e7e7ff;
+            color: #8c8eff;
+            border: none;
+            border-radius: 0.9rem;
+        }
+
+        .btnhidden:hover{
+            background: #dcdcff;
+            color: #8c8eff;
+        }
+    </style>
+</head>
+<body>
+    <div class="hidden_element" style="display:none">
+        <div class="aboutcontainer">
+            <div class="contenthidden">
+                <h1>Nama&nbsp&nbsp&nbsp: Naufal Azmi Ginting</h1>
+                <h1>Nim&nbsp&nbsp&nbsp&nbsp: 2202067</h1>
+                <h1>Kelas&nbsp&nbsp: 22S02</h1>
+                <div class="flxbutton">
+                    <button class="btnhidden" onclick="toggle()">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebarline">
+                <div class="logo">
+                    <h3>NTable</h3>
+                </div>
+                <div class="btn">
+                    Dashboard
+                </div>
+                <div class="btn active">
+                    Table
+                </div>
+                <div class="btn">
+                    Report
+                </div>
+                <div class="btn">
+                    Settings
+                </div>
+                <div class="btn" onclick="toggle()">
+                    About
+                </div>
+                <div class="btn">
+                    Logout
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="header">
+                <h2>Tabel mahasiswa</h2>
+            </div>
+            <div class="tablecontent">
+                <table class="tablex">
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Kelas</th>
+                        <th>Prodi</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Yosia Meteu</td>
+                        <td>22S01</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bramadhita Keytarou Yamasa</td>
+                        <td>22S09</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Farhan Khadafi</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Diki Irmansyah</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Iqbal Sandhi Ksatria</td>
+                        <td>22S07</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Hartini Damanik</td>
+                        <td>22S03</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Khoriatul Sadrina Zendrato</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Muhammad Agung Alfatih</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Muhammad Hafizul Ali</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Muhammad Agil Irsyad</td>
+                        <td>22S07</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Aprilia Syahputri</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Saudi Iqbal</td>
+                        <td>22S07</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Marissa Febrina</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Muhammad Azhari</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Silva Widyana</td>
+                        <td>22S03</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Firman Dwi Wiratama</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Thamriansyah</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Fikri Wicaksono</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Paundra Purwardani</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Muhammad Alfarid</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Albayaan Rindu Akbar Sinaga</td>
+                        <td>22S02</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>Lewi Forlando Siahaan</td>
+                        <td>22S09</td>
+                        <td>Sistem Informasi</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        var hidden = true;
+
+        function toggle(){
+            if(hidden){
+                document.getElementsByClassName("hidden_element")[0].style = "display:flex";
+                hidden = !hidden;
+            }
+            else{
+                document.getElementsByClassName("hidden_element")[0].style = "display:none";
+                hidden = !hidden;
+            }
+        }
+    </script>
+</body>
+</html>

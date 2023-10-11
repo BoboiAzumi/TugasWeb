@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperlink Biodata</title>
+
+    <style>
+        html, body{
+            font-family: monospace;
+            margin: 0;
+            height: 100%;
+        }
+
+        .wrap{
+            width: 100%;
+            height: 100%;
+        }
+
+        .headbar{
+            background-image: linear-gradient(rgba(255,255,255,255), rgba(250,250,250,255));
+            padding-left: 3rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            display: flex;
+        }
+
+        .headbar h3{
+            color: rgba(100,100,100,255);
+            font-size: 1.6rem;
+        }
+
+        .headbar .search{
+            margin-left: 20rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            height: 1.8rem;
+            width: 40rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: rgba(244,244,244,255);
+            border-radius: 1rem;
+            overflow: hidden;
+            border: none;
+            margin-right: 2rem;
+        }
+
+        .headbar .search:focus{
+            outline: none;
+        }
+
+        .bar{
+            display:flex;
+            margin-left: 1rem;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            border-radius: 1rem;;
+        }
+
+        .bar:hover{
+            background-color: rgba(230,230,230,255);
+            justify-content: center;
+        }
+
+        .bar h5{
+            margin-left: 2rem;
+            margin-right: 2rem;
+            font-size: 1rem;
+        }
+        
+        .container{
+            display: flex;
+            min-height: 100%;
+        }
+
+        .sidebar-parent{
+            border: 1px solid black;
+
+            width: 20rem;
+            
+        }
+
+        .sidebar{
+            position: relative;
+            margin-right: 2rem;
+            width: 20rem;
+        }
+
+        .content{
+            width: 80rem;
+            border-left: 10px solid rgba(250,250,250,255);
+            min-height: 100%;
+        }
+
+        .flexbox-center{
+            display:flex;
+            justify-content: center;
+        }
+        .flexbox-left{
+            display:flex;
+            justify-content: start;
+        }
+        .flexbox-right{
+            display:flex;
+            justify-content: end;
+        }
+
+        .profile-image{
+            border-radius: 50%;
+            margin-top: 3rem;
+        }
+
+        .sidebar h3{
+            text-align: center;
+        }
+
+        .tablex th{
+            width: 5rem;
+            text-align: center;
+        }
+        .tablex td{
+            width: 5.7rem;
+            text-align: center;
+        }
+
+        .button-group{
+            display:block;
+            margin: 1rem;
+        }
+
+        .btn{
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
+            margin: 1rem;
+            border-radius: 10px;
+            background-color: rgba(251, 255, 199, 255);
+        }
+
+        .btn:hover{
+            background-color: rgba(247, 255, 144, 255);
+        }
+        
+        .btn.active{
+            background-color: rgba(245, 255, 113, 255);
+        }
+
+        .line{
+            border: 1px solid rgba(250,250,250,255);
+        }
+
+        .content-info{
+            
+            margin-top:2rem;
+            margin-left: 3rem;
+            margin-right: 3rem;
+            
+        }
+
+        .personlist{
+            width:inherit;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 1rem;
+            grid-auto-flow: row dense;
+        }
+
+        .personbox{
+            border-radius: 3rem;
+            width: 20rem;
+            padding: 2rem;
+            background-color: rgba(217,219,220,255);
+        }
+
+        .imaged{
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .nickname{
+            margin-top: 2rem;
+        }
+
+        .width50{
+            width: 50%;
+        }
+
+        .searchpeople{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            height: 1.8rem;
+            width: 40rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: rgba(244,244,244,255);
+            border-radius: 1rem;
+            overflow: hidden;
+            border: none;
+            margin-right: 2rem;
+        }
+
+        .searchpeople:focus{
+            outline: none;
+        }
+
+        .buttonsearch{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: rgba(244,244,244,255);
+            border-radius: 1rem;
+            border: none;
+            margin-right: 2rem;
+        }
+
+        .buttonsearch:hover{
+            background-color: rgba(230,230,230,255);
+        }
+
+        .buttonsearch:active{
+            background-color: rgba(210,210,210,255);
+        }
+
+        .nicknamelinks{
+            text-decoration: none;
+            background-color: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="headbar">
+            <h3>Biodata Hub</h3>
+            <input type="text" class="search" placeholder="Search">
+            <div class="bar">
+                <h5>Home</h5>
+            </div>
+            <div class="bar">
+                <h5>ToS</h5>
+            </div>
+            <div class="bar">
+                <h5>Support</h5>
+            </div>
+        </div>
+        <div class="container">
+            <div class="sidebar">
+                <div class="flexbox-center">
+                    <img src="rem.jpg" width="150px" class="profile-image"/>
+                </div>
+                <h3>Naufal Azmi</h3>
+                <hr class="line">
+                <div class="flexbox-center">
+                    <table class="tablex">
+                        <tr>
+                            <th>1K</th>
+                            <th>23K</th>
+                            <th>162K</th>
+                        </tr>
+                        <tr>
+                            <td>Following</td>
+                            <td>Followers</td>
+                            <td>Like</td>
+                        </tr>
+                    </table>
+                </div>
+                <hr class="line">
+                <div class="flexbox-center">
+                    <div class="button-group">
+                        <div class="btn">
+                            <h3>Feed</h3>
+                        </div>
+                        <div class="btn">
+                            <h3>Explore</h3>
+                        </div>
+                        <div class="btn">
+                            <h3>Top Post</h3>
+                        </div>
+                        <div class="btn active">
+                            <h3>People</h3>
+                        </div>
+                        <div class="btn">
+                            <h3>Messages</h3>
+                        </div>
+                        <div class="btn">
+                            <h3>Profile</h3>
+                        </div>
+                        <div class="btn">
+                            <h3>Logout</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content-info">
+                    <div class="flexbox-center">
+                        <div class="flexbox-left width50">
+                            <h2>All People</h2>
+                        </div>
+                        <div class="flexbox-right width50">
+                            <input type="text" class="searchpeople" placeholder="Search People">
+                            <input type="button" class="buttonsearch" value="Search">
+                        </div>
+                    </div>
+                    <hr class="line">
+                    <div class="personlist">
+                        <div class="personbox">
+                            <div class="flexbox-center">
+                                <a href="biodata1.html">
+                                    <img src="kaguya.jpg" width="200px" height="200" class="imaged">
+                                </a>
+                            </div>
+                            <div class="flexbox-center">
+                                <a href="biodata1.html" class="nicknamelinks">
+                                    <h3 class="nickname">Ahmad Takahashi</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="personbox">
+                            <div class="flexbox-center">
+                                <a href="biodata2.html">
+                                    <img src="nino.jpg" width="200px" height="200" class="imaged">
+                                </a>
+                            </div>
+                            <div class="flexbox-center">
+                                <a href="biodata2.html" class="nicknamelinks">
+                                    <h3 class="nickname">Furqan Masayuki</h3>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="personbox">
+                            <div class="flexbox-center">
+                                <a href="biodata3.html">
+                                    <img src="Ai.png" width="200px" height="200" class="imaged">
+                                </a>
+                            </div>
+                            <div class="flexbox-center">
+                                <a href="biodata3.html" class="nicknamelinks">
+                                    <h3 class="nickname">Abdurrahman Tanaka</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
