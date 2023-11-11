@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUIS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="flx">
+        <div class="box-container">
+            <h2 class="heading">Formulir Pendaftaran</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <h4 class="label">Nama Lengkap:</h4>
+                <input type="text" name="nama" class="input" required>
+
+                <h4 class="label">Nama Panggilan:</h4>
+                <input type="text" name="panggilan" class="input" required>
+
+                <h4 class="label">Jenis Kelamin:</h4>
+                <input type="radio" name="jenkel" required>
+                <b>Laki-Laki</b>
+                <br>
+                <input type="radio" name="jenkel" required>
+                <b>Perempuan</b>
+
+                <h4 class="label">Tempat Lahir:</h4>
+                <input type="text" name="tptlahir" class="input" required>
+
+                <h4 class="label">Tanggal Lahir:</h4>
+                <input type="date" name="tgllahir" class="input" required>
+
+                <h4 class="label">Alamat Rumah:</h4>
+                <input type="text" name="alamat" class="input" required>
+
+                <h4 class="label">Agama:</h4>
+                <select name="agama" class="input" required>
+                    <option value=""></option>
+                    <option value="Islam">Islam</option>
+                    <option value="Katolik">Katolik</option>
+                    <option value="Protestan">Protestan</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Buddha">Buddha</option>
+                </select>
+
+                <h4 class="label">Program Studi yang Dipilih (Pilihan Pertama):</h4>
+                <select name="prodi1" class="input" required>
+                    <option value=""></option>
+                    <option value="Teknik Informatika">Teknik Informatika</option>
+                    <option value="Sistem Informasi">Sistem Informasi</option>
+                    <option value="Manajemen Informatika">Manajemen Informatika</option>
+                    <option value="Komputerisasi Akuntansi">Komputerisasi Akuntansi</option>
+                </select>
+
+                <h4 class="label">Program Studi yang Dipilih (Pilihan Kedua):</h4>
+                <select name="prodi2" class="input" required>
+                    <option value=""></option>
+                    <option value="Teknik Informatika">Teknik Informatika</option>
+                    <option value="Sistem Informasi">Sistem Informasi</option>
+                    <option value="Manajemen Informatika">Manajemen Informatika</option>
+                    <option value="Komputerisasi Akuntansi">Komputerisasi Akuntansi</option>
+                </select>
+
+                <h4 class="label">Apakah Anda memiliki pilihan Program Studi lainnya ?:</h4>
+                <input type="radio" name="programstudilainnya" required>
+                <b>Ya</b>
+                <input type="radio" name="programstudilainnya" required>
+                <b>Tidak</b>
+
+                <h4 class="label">Asal Sekolah:</h4>
+                <input type="text" name="asalsekolah" class="input" required>
+
+                <h4 class="label">Tahun Lulus:</h4>
+                <input type="number" name="tahunlulus" class="input" required>
+
+                <h4 class="label">Nilai rata-rata/Ipk:</h4>
+                <input type="number" name="ipk" class="input" required>
+
+                <h4 class="label">Foto (Pasfoto)</h4>
+                <input type="file" name="pasfoto" class="input input-file" required>
+
+                <h4 class="label">Scan kartu Identitas (KTP/SIM/Paspor)</h4>
+                <input type="file" name="scanidentitas" class="input input-file" required>
+
+                <h4 class="label">Scan Ijazah</h4>
+                <input type="file" name="scanijazah" class="input input-file" required>
+
+                <input type="submit" class="input input-submit" value="Kirim Pendaftaran">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

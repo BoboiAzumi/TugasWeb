@@ -1,0 +1,47 @@
+html, body{
+    background-color: rgba(242,242,242,255);
+}
+
+.flx{
+    display: flex;
+    justify-content: center;
+}
+
+.label{
+    margin-bottom: 0;
+}
+
+.heading{
+    margin-top:0.3rem;
+}
+
+.box-container{
+    background-color: rgba(255, 255, 255, 255);
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
+
+.input{
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 1px;
+    border-color: rgba(214,214,214,255);
+    border-radius: 0.3rem;
+    outline: none;
+    padding: 0.4rem;
+}
+
+.input-file{
+    border: solid 1px;
+    border-color: rgba(214,214,214,255);
+    padding: 0.6rem;
+}
+
+.input-submit{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.7rem;
+    background-color: rgba(0,177,88,255);
+    color: rgba(210,250,240,255);
+    cursor: pointer;
+}
